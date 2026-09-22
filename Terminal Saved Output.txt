@@ -1,0 +1,186 @@
+alexdepamphilis@Alexs-MacBook-Air-4 homework_1 % git commit --amend --no-edit
+[master 662db85] Solve problem 2
+ Date: Tue Sep 15 13:57:02 2026 -0400
+ 2 files changed, 10 insertions(+)
+alexdepamphilis@Alexs-MacBook-Air-4 homework_1 % rm -rf .git
+alexdepamphilis@Alexs-MacBook-Air-4 homework_1 % git init
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: will change to "main" in Git 3.0. To configure the initial branch name
+hint: to use in all of your new repositories, which will suppress this warning,
+hint: call:
+hint:
+hint: 	git config --global init.defaultBranch <name>
+hint:
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint:
+hint: 	git branch -m <name>
+hint:
+hint: Disable this message with "git config set advice.defaultBranchName false"
+Initialized empty Git repository in /Users/alexdepamphilis/Documents/DATA413/homework_1/.git/
+alexdepamphilis@Alexs-MacBook-Air-4 homework_1 % clear
+
+alexdepamphilis@Alexs-MacBook-Air-4 homework_1 % git add . 
+alexdepamphilis@Alexs-MacBook-Air-4 homework_1 % git commit -m "Solve problem 1"
+[master (root-commit) 296d34f] Solve problem 1
+ 2 files changed, 10 insertions(+)
+ create mode 100644 homework_1_alex_depamphilis.R
+ create mode 100644 homework_1_alex_depamphilis.docx
+alexdepamphilis@Alexs-MacBook-Air-4 homework_1 % git add .
+alexdepamphilis@Alexs-MacBook-Air-4 homework_1 % git commit -m "Solve problem 2"
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   homework_1_alex_depamphilis.R
+	modified:   homework_1_alex_depamphilis.docx
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	~$mework_1_alex_depamphilis.docx
+
+no changes added to commit (use "git add" and/or "git commit -a")
+alexdepamphilis@Alexs-MacBook-Air-4 homework_1 % git add .
+alexdepamphilis@Alexs-MacBook-Air-4 homework_1 % git commit -m "Solve problem 2"
+[master c32768b] Solve problem 2
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+alexdepamphilis@Alexs-MacBook-Air-4 homework_1 % git log --oneline
+c32768b (HEAD -> master) Solve problem 2
+296d34f Solve problem 1
+alexdepamphilis@Alexs-MacBook-Air-4 homework_1 % cd DATA413
+cd: no such file or directory: DATA413
+alexdepamphilis@Alexs-MacBook-Air-4 homework_1 % cd /Users/alexdepamphilis/Documents/DATA413/
+alexdepamphilis@Alexs-MacBook-Air-4 DATA413 % cd life_exp_analysis         
+cd: no such file or directory: life_exp_analysis
+alexdepamphilis@Alexs-MacBook-Air-4 DATA413 % git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   homework_1/homework_1_alex_depamphilis.R
+	modified:   homework_1/homework_1_alex_depamphilis.docx
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.DS_Store
+	homework_1/~$mework_1_alex_depamphilis.docx
+	life_exp/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+alexdepamphilis@Alexs-MacBook-Air-4 DATA413 % cd /Users/alexdepamphilis/Documents/DATA413/life_exp/
+alexdepamphilis@Alexs-MacBook-Air-4 life_exp % git add . 
+alexdepamphilis@Alexs-MacBook-Air-4 life_exp % git status
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   .DS_Store
+	new file:   commands.txt
+	new file:   copy.txt
+	new file:   life_exp_analysis.html
+	new file:   life_exp_analysis_files/libs/bootstrap/bootstrap-d6a003b94517c951b2d65075d42fb01b.min.css
+	new file:   life_exp_analysis_files/libs/bootstrap/bootstrap-icons.css
+	new file:   life_exp_analysis_files/libs/bootstrap/bootstrap-icons.woff
+	new file:   life_exp_analysis_files/libs/bootstrap/bootstrap.min.js
+	new file:   life_exp_analysis_files/libs/clipboard/clipboard.min.js
+	new file:   life_exp_analysis_files/libs/quarto-html/anchor.min.js
+	new file:   life_exp_analysis_files/libs/quarto-html/axe/axe-check.js
+	new file:   life_exp_analysis_files/libs/quarto-html/popper.min.js
+	new file:   life_exp_analysis_files/libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css
+	new file:   life_exp_analysis_files/libs/quarto-html/quarto.js
+	new file:   life_exp_analysis_files/libs/quarto-html/tabsets/tabsets.js
+	new file:   life_exp_analysis_files/libs/quarto-html/tippy.css
+	new file:   life_exp_analysis_files/libs/quarto-html/tippy.umd.min.js
+	new file:   scratch.txt
+
+alexdepamphilis@Alexs-MacBook-Air-4 life_exp % git commit -m "preparing for class 3"
+[main 7287223] preparing for class 3
+ 18 files changed, 4033 insertions(+)
+ create mode 100644 .DS_Store
+ create mode 100644 commands.txt
+ create mode 100644 copy.txt
+ create mode 100644 life_exp_analysis.html
+ create mode 100644 life_exp_analysis_files/libs/bootstrap/bootstrap-d6a003b94517c951b2d65075d42fb01b.min.css
+ create mode 100644 life_exp_analysis_files/libs/bootstrap/bootstrap-icons.css
+ create mode 100644 life_exp_analysis_files/libs/bootstrap/bootstrap-icons.woff
+ create mode 100644 life_exp_analysis_files/libs/bootstrap/bootstrap.min.js
+ create mode 100644 life_exp_analysis_files/libs/clipboard/clipboard.min.js
+ create mode 100644 life_exp_analysis_files/libs/quarto-html/anchor.min.js
+ create mode 100644 life_exp_analysis_files/libs/quarto-html/axe/axe-check.js
+ create mode 100644 life_exp_analysis_files/libs/quarto-html/popper.min.js
+ create mode 100644 life_exp_analysis_files/libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css
+ create mode 100644 life_exp_analysis_files/libs/quarto-html/quarto.js
+ create mode 100644 life_exp_analysis_files/libs/quarto-html/tabsets/tabsets.js
+ create mode 100644 life_exp_analysis_files/libs/quarto-html/tippy.css
+ create mode 100644 life_exp_analysis_files/libs/quarto-html/tippy.umd.min.js
+ create mode 100644 scratch.txt
+alexdepamphilis@Alexs-MacBook-Air-4 life_exp % git push
+fatal: The current branch main has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin main
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+alexdepamphilis@Alexs-MacBook-Air-4 life_exp % git push -u origin main
+
+remote: Permission to alexdep27/life_exp_alexdep27.git denied to alexdep23.
+fatal: unable to access 'https://github.com/alexdep27/life_exp_alexdep27.git/': The requested URL returned error: 403
+alexdepamphilis@Alexs-MacBook-Air-4 life_exp % git status
+On branch main
+nothing to commit, working tree clean
+alexdepamphilis@Alexs-MacBook-Air-4 life_exp % git remote set-url origin https://github.com
+
+alexdepamphilis@Alexs-MacBook-Air-4 life_exp % echo "scratch" > notes.Rhistory
+alexdepamphilis@Alexs-MacBook-Air-4 life_exp % echo "secret_key = abc_123" > .Renviron
+alexdepamphilis@Alexs-MacBook-Air-4 life_exp % echo "scratch" > notes.Rhistory
+alexdepamphilis@Alexs-MacBook-Air-4 life_exp % mkdir data                      
+alexdepamphilis@Alexs-MacBook-Air-4 life_exp % echo "a,b" > data/big_file.csv
+alexdepamphilis@Alexs-MacBook-Air-4 life_exp % open big_file.csv
+The file /Users/alexdepamphilis/Documents/DATA413/life_exp/big_file.csv does not exist.
+alexdepamphilis@Alexs-MacBook-Air-4 life_exp % cd data
+alexdepamphilis@Alexs-MacBook-Air-4 data % open big_file.csv
+alexdepamphilis@Alexs-MacBook-Air-4 data % git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   ../.DS_Store
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	../.Renviron
+	./
+	../life_exp_analysis_files/.DS_Store
+	../notes.Rhistory
+
+no changes added to commit (use "git add" and/or "git commit -a")
+alexdepamphilis@Alexs-MacBook-Air-4 data % printf ".Renviron\n*.Rhistory\n*.log\ndata\big_file.csv\' > .gitignore
+dquote> cd life_exp
+dquote> 
+dquote> cd \Users\alexdepamphilis\Documents\life_exp
+dquote> 
+alexdepamphilis@Alexs-MacBook-Air-4 data % cd /Users/alexdepamphilis/Documents/life_exp
+cd: no such file or directory: /Users/alexdepamphilis/Documents/life_exp
+alexdepamphilis@Alexs-MacBook-Air-4 data % cd /Users/alexdepamphilis/Documents/life_exp/ 
+cd: no such file or directory: /Users/alexdepamphilis/Documents/life_exp/
+alexdepamphilis@Alexs-MacBook-Air-4 data % cd /Users/alexdepamphilis/Documents/DATA413/life_exp/
+alexdepamphilis@Alexs-MacBook-Air-4 life_exp % echo -e ".Renviron/n*.Rhistory/n*.log/ndata/big_file.csv" > .gitignonre
+alexdepamphilis@Alexs-MacBook-Air-4 life_exp % echo -e ".Renviron/n*.Rhistory/n*.log/ndata/big_file.csv" > .gitignore  
+
+alexdepamphilis@Alexs-MacBook-Air-4 life_exp % start .gitignore
+zsh: command not found: start
+alexdepamphilis@Alexs-MacBook-Air-4 life_exp % open .gitignore
+alexdepamphilis@Alexs-MacBook-Air-4 life_exp % echo -e ".Renviron\n*.Rhistory\n*.log\ndata
+
+dquote> 
+alexdepamphilis@Alexs-MacBook-Air-4 life_exp % echo -e ".Renviron\n*.Rhistory\n*.log\ndata/big_file.csv" > .gitignore 
+
+alexdepamphilis@Alexs-MacBook-Air-4 life_exp % open .gitignore
+alexdepamphilis@Alexs-MacBook-Air-4 life_exp % echo ".Renviron" > .gitignore
+alexdepamphilis@Alexs-MacBook-Air-4 life_exp % echo "*.Rhistory" >> .gitignore
+alexdepamphilis@Alexs-MacBook-Air-4 life_exp % echo "*.log" >> .gitignore
+alexdepamphilis@Alexs-MacBook-Air-4 life_exp % echo "data/big_file.csv" >> .gitignore
+alexdepamphilis@Alexs-MacBook-Air-4 life_exp % open .gitignore
+alexdepamphilis@Alexs-MacBook-Air-4 life_exp % echo "secret_ket = abc123" > .Renviron
+alexdepamphilis@Alexs-MacBook-Air-4 life_exp % 

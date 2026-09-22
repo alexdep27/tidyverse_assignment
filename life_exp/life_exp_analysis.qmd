@@ -1,0 +1,13 @@
+---
+title: "Examine Life Expectancy"
+date: today
+format: html
+---
+```{r}
+library(tidyverse)
+library(gapminder)
+```
+
+# Abstract
+
+# Analysis
