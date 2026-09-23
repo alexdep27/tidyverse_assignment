@@ -63,6 +63,19 @@ glimpse(college_data)
 
 -   Task 4: Create a scatterplot for SAT_AVG and ADM_RATE (Remove NA)
 
+    ```{r}
+    selected_data %>%
+      drop_na(SAT_AVG, ADM_RATE) %>%
+      ggplot(aes(x = SAT_AVG, y = ADM_RATE)) +
+      geom_point() +
+      labs(
+        title = "Relationship Between Average SAT Score and Admission Rate",
+        x = "Average SAT Score (SAT_AVG)",
+        y = "Admission Rate (ADM_RATE)")
+    ```
+
+In Task 4, I created a scatterplot based on Average SAT Score and Admission Rate, seeing if there is a relationship between the two variables. I used ggplot to plot the graph, which shows a decent negative relationship. Schools with higher SAT averages are more likely to be selective in their admission process, only taking higher scores, which adds context to what we see on the plot. There are a lot of schools who have middle of the road averages (1000-1100) range, which can throw off the graph density, but I would still say there is a decent negative relationship.
+
 ## Submission
 
 -   After completing **each question**, save your Quarto file, render it, then **stage and commit** your changes.
