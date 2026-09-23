@@ -52,7 +52,16 @@ glimpse(college_data)
 
     In Task 2, I used the `nrow()` and `ncol()` functions to get the number of rows and columns in `college_data`. It returned 7175 rows and 12 columns in the console.
 
--   Task 3: Use tidyverse to select INSTNM, SAT_AVG, and ADM_RATETask 4: Create a scatterplot for SAT_AVG and ADM_RATE (Remove NA)
+-   Task 3: Use tidyverse to select INSTNM, SAT_AVG, and ADM_RATE
+
+    ```{r}
+     selected_data <- college_data |>
+      select(INSTNM, SAT_AVG, ADM_RATE)
+    ```
+
+    In Task 3, I created a new filtered data set, `selected_data`, which only looks at the University name, SAT average and ADM rate. I used the piping operator to select these variables and assigned them to a new data set.
+
+-   Task 4: Create a scatterplot for SAT_AVG and ADM_RATE (Remove NA)
 
 ## Submission
 
