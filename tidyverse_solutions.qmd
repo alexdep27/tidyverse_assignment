@@ -49,6 +49,8 @@ tribble( ~x,    ~y,    ~w,    ~z,
 map_dbl(dt, mean)
 ```
 
+- Use `map_dbl` due to the value being a decimal integer, call the data and produce the mean
+
 ## 1_b:
 
 - Use and show a `map` function to find the "standard deviation" of each column of the `dt` data table.
@@ -56,6 +58,8 @@ map_dbl(dt, mean)
 ```{r}
 map_dbl(dt, sd)
 ```
+
+- Use `map_dbl` due to the value being a decimal integer, call the data and produce the standard deviation
 
 ## 1_c:
 
@@ -65,6 +69,8 @@ map_dbl(dt, sd)
 map_df(dt, sqrt)
 ```
 
+- Use `map_dbl` to return the square root in a table, then call the sqrt using `sqrt` in the parameter.
+
 ## 1_d:
 
 - Use R code to find the "mean", "max", "1st Quartile", "3rd Quartile", "Median", and "Min" for each column of the `dt` data table. (Hint: You do not have to use a map function)
@@ -72,6 +78,8 @@ map_df(dt, sqrt)
 ```{r}
 summary(dt)
 ```
+
+- Use the `summary()` function to get the summary statistics for each column, all in one function
 
 # Problem 2:
 
