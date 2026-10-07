@@ -266,6 +266,27 @@ Given the following dates, compute the difference in **months** and **weeks** be
 sample_dates <- c("2018-03-15", "2020-07-20", "2023-01-10", "2025-09-05")
 ```
 
+```{r}
+#input sample dates
+sample_dates <- c("2018-03-15", "2020-07-20", "2023-01-10", "2025-09-05")
+
+#turn string dates into objects
+dates_o <- ymd(sample_dates)
+
+#define start dates and end dates
+start_dates <- dates_o[-length(dates_o)]
+end_dates <- dates_o[-1]
+
+#calculate difference in months and dates between pairs
+date_diffs <- tibble(
+  pair        = paste(start_dates, "to", end_dates),
+  diff_months = (start_dates %--% end_dates) / months(1),
+  diff_weeks  = (start_dates %--% end_dates) / weeks(1)
+)
+
+date_diffs
+```
+
 # Problem 6
 
 Given a list of mixed date formats, use `map()` and `possibly()` from `purrr` to safely convert them to **Date** format and extract the **month name**.
