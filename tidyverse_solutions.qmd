@@ -24,6 +24,7 @@ ggplot2::theme_set(ggplot2::theme_bw())
 #| warning: false
 if(!require("pacman")) install.packages("pacman")
 pacman::p_load(tidyverse, gapminder, broom)
+
 ```
 
 # Problem 1:
@@ -47,9 +48,8 @@ tribble( ~x,    ~y,    ~w,    ~z,
 
 ```{r}
 map_dbl(dt, mean)
+#Use map_dbl due to the value being a decimal integer, call the data and produce the mean
 ```
-
-- Use `map_dbl` due to the value being a decimal integer, call the data and produce the mean
 
 ## 1_b:
 
@@ -57,9 +57,8 @@ map_dbl(dt, mean)
 
 ```{r}
 map_dbl(dt, sd)
+#Use map_dbl due to the value being a decimal integer, call the data and produce the standard deviation
 ```
-
-- Use `map_dbl` due to the value being a decimal integer, call the data and produce the standard deviation
 
 ## 1_c:
 
@@ -67,9 +66,8 @@ map_dbl(dt, sd)
 
 ```{r}
 map_df(dt, sqrt)
+#Use map_dbl to return the square root in a table, then call the sqrt using sqrt in the parameter.
 ```
-
-- Use `map_dbl` to return the square root in a table, then call the sqrt using `sqrt` in the parameter.
 
 ## 1_d:
 
@@ -77,9 +75,8 @@ map_df(dt, sqrt)
 
 ```{r}
 summary(dt)
+#Use the summary() function to get the summary statistics for each column, all in one function
 ```
-
-- Use the `summary()` function to get the summary statistics for each column, all in one function
 
 # Problem 2:
 
@@ -99,17 +96,95 @@ Write a function that uses a for loop that, for each iteration, randomly draws 5
 
   - **Now, let's solve the problem all in one step**
 
+```{r}
+#Create vector size of 10000
+B <- 10000
+means_for <- vector("double", B)
+
+#Loop 10000 times
+for (i in seq_len(B)) {
+  means_for[[i]] <- mean(rexp(5, rate=1))
+}
+
+#Create data frame and histogram
+df_for <- tibble(sample_mean = means_for)
+ggplot(df_for, aes(x=sample_mean)) +
+  geom_histogram(bins=30, fill = 'blue', color='black') +
+  labs(
+    title="Distribution of Sample Means with For Loop",
+    x="Sample Mean",
+    y="Frequency"
+  )
+```
+
 ## 2_a:
 
 - Repeat part 1 by using a `map_*()` function.
+
+```{r}
+#Calculate sample mean from each iteration in the rexp(rate=1)
+means_map <- map_dbl(1:10000, \(i) mean(rexp(5, rate=1)))
+
+#convert vector into data frame
+df_map <- tibble(sample_mean = means_map)
+
+#create histogram
+ggplot(df_map, aes(x = sample_mean)) +
+  geom_histogram(bins = 30, fill = "blue", color = "black") +
+  labs(
+    title = "Distribution of Sample Means",
+    x = "Sample Mean",
+    y = "Frequency"
+  )
+```
 
 ## 2_b:
 
 - Repeat part 1 by using the `replicate()` function.
 
+```{r}
+#Repeat randomization and mean calculation 10000 times
+means_rep <- replicate(10000, mean(rexp(5, rate=1)))
+
+#Store results in tibble
+df_rep <- tibble(sample_mean = means_rep)
+
+#Plot distribution
+ggplot(df_rep, aes(x = sample_mean)) +
+  geom_histogram(bins = 30, fill = "blue", color = "black") +
+  labs(
+    title = "Distribution of Sample Means (replicate, n = 5)",
+    x = "Sample Mean",
+    y = "Frequency"
+  )
+```
+
 ## 2_c:
 
 - Use a another for loop that will print out plots for sample sizes of 5, 10, and 20 observations (instead of just 5).
+
+```{r}
+# Define vector of sample sizes
+sample_sizes <- c(5, 10, 20)
+
+#For loop iterates through each sample
+for (n in sample_sizes) {
+  means <- vector("double", 10000)
+  for (i in 1:10000) {
+    means[[i]] <- mean(rexp(n, rate=1))
+  }
+  df_n <- tibble(sample_mean = means)
+  p <- ggplot(df_n, aes(x = sample_mean)) +
+    geom_histogram(bins = 30, fill = "blue", color = "black") +
+    labs(
+      title = paste("Distribution of Sample Means (n =", n, ")"),
+      x = "Sample Mean",
+      y = "Frequency"
+    )
+  
+  print(p)
+}
+```
 
 # Problem 3:
 
@@ -151,6 +226,18 @@ output
 ```
 
 - **Solution:** coding to calculate the "standard deviation" for each variable
+
+```{r}
+# Get output vector with correct length and type
+output <- vector("double", ncol(mtcars))
+names(output) <- colnames(mtcars)
+
+#Sequence mtcars columns
+for(i in seq_along(mtcars)) {
+  output[[i]] <- sd(mtcars[[i]])
+}
+output
+```
 
 # Problem 4:
 
