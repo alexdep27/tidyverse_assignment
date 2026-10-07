@@ -274,7 +274,7 @@ sample_dates <- c("2018-03-15", "2020-07-20", "2023-01-10", "2025-09-05")
 dates_parse <- ymd(sample_dates)
 
 #define start dates and end dates
-start_dates <- dates_parse[-length(dates_o)]
+start_dates <- dates_parse[-length(dates_parse)]
 end_dates <- dates_parse[-1]
 
 #calculate difference in months and dates between pairs
