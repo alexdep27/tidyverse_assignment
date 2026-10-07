@@ -271,11 +271,11 @@ sample_dates <- c("2018-03-15", "2020-07-20", "2023-01-10", "2025-09-05")
 sample_dates <- c("2018-03-15", "2020-07-20", "2023-01-10", "2025-09-05")
 
 #turn string dates into objects
-dates_o <- ymd(sample_dates)
+dates_parse <- ymd(sample_dates)
 
 #define start dates and end dates
-start_dates <- dates_o[-length(dates_o)]
-end_dates <- dates_o[-1]
+start_dates <- dates_parse[-length(dates_o)]
+end_dates <- dates_parse[-1]
 
 #calculate difference in months and dates between pairs
 date_diffs <- tibble(
@@ -293,4 +293,39 @@ Given a list of mixed date formats, use `map()` and `possibly()` from `purrr` to
 
 ``` r
 date_strings <- list("2023-06-10", "2022/12/25", "15-Aug-2021", "InvalidDate")
+```
+
+```{r}
+# Input list of date formats
+date_strings <- list("2023-06-10", "2022/12/25", "15-Aug-2021", "InvalidDate")
+
+#Wrap function in possibly() to handle errors
+safe_parse <- possibly(
+  function(x){
+    as.Date(parse_date_time(x, orders = c("ymd", "dmy", "Ymd")))
+  },
+  otherwise = NA
+)
+
+#Apply safe parsing across all elements
+parsed_dates <- map(date_strings, safe_parse)
+
+#wrap month in possibly() to handle errors
+safe_month <- possibly(
+  function(d) {
+    if (is.na(d)) return(NA_character_)
+    as.character(month(d, label = TRUE, abbr = FALSE))
+  },
+  otherwise = NA_character_
+)
+
+#Apply safe month extraction across parsed dates
+month_names <- map(parsed_dates, safe_month)
+
+#Combine results
+tibble(
+  input      = unlist(date_strings),
+  parsed     = do.call(c, parsed_dates),
+  month_name = unlist(month_names)
+)
 ```
