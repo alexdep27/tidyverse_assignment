@@ -1,5 +1,0 @@
-.Renviron
-*.Rhistory
-*.log
-data/big_file.csv
-.DS_Store
