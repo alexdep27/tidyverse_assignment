@@ -243,6 +243,21 @@ output
 
 Generate a sequence of dates from **January 1, 2015** to **December 31, 2025**, spaced by every **two months**. Extract the **year**, **quarter**, and **ISO week number** for each date.
 
+```{r}
+#generate data sequence  from selected dates with two month spaces
+dates_seq <- seq(from = ymd("2015-01-01"), to = ymd('2025-12-31'), by= "2 months")
+
+#Extract year, quarter, and ISO week number into tibble
+dates_tbl <- tibble(
+  date     = dates_seq,
+  year     = year(dates_seq),
+  quarter  = quarter(dates_seq),
+  iso_week = isoweek(dates_seq)
+)
+
+dates_tbl
+```
+
 # Problem 5
 
 Given the following dates, compute the difference in **months** and **weeks** between each consecutive pair.
